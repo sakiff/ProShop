@@ -1,0 +1,23 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "server side",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakiff/Proshop.git"
+  },
+  "author": "sakif chowdhury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sakiff/Proshop/issues"
+  },
+  "homepage": "https://github.com/sakiff/Proshop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
