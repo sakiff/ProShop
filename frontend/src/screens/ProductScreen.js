@@ -8,7 +8,11 @@ const ProductScreen = ({match}) => {
     const product = products.find(p => p._id === match.params.id)
     return (
         <>
-        <Link to='/' className='btn btn-light my-3'>Go Back</Link>
+        <Link to='/' className='btn btn-light my-3'>
+            <Button>
+                Go Back
+            </Button>
+        </Link>
 
         <Row>
             <Col md={6}>
@@ -24,6 +28,36 @@ const ProductScreen = ({match}) => {
                     <Rating value={product.rating} text={`${product.numReviews} reviews`}/>
                 </ListGroup.Item>
             </ListGroup>
+            </Col>
+            <Col md={3}>
+                <Card>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>
+                            <Row>
+                                <Col>
+                                    Price: 
+                                </Col>
+                                <Col>
+                                    <strong>${product.price}</strong>
+                                </Col>
+                            </Row>
+                        </ListGroup.Item>
+                    
+                        <ListGroup.Item>
+                            <Col>
+                                <Row>{product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}</Row>
+                            </Col>
+                        </ListGroup.Item>
+
+                        <ListGroup.Item>
+                            <Row>
+                                <Button className='btn btn-block ' type='button' disabled={product.countInStock === 0}>
+                                    Add To Cart
+                                </Button>
+                            </Row>
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Card>
             </Col>
         </Row>
         </>
